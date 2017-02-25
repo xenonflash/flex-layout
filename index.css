@@ -1,0 +1,159 @@
+div{
+  margin:10px;
+  padding:10px;
+  border: 2px solid #999;
+  font-size: 10px;
+}
+.parent1{
+  display: flex;
+  /*弹性盒 排列方向, 横向为 main axis 纵向为 cross Axis*/
+  flex-direction: column;
+  flex-direction: row;
+  flex-direction: row-reverse;
+  flex-direction: column-reverse;
+
+  /*弹性盒子包裹子项方式*/
+  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
+
+  /*flex-direction 和 flex-wrap 两个属性的简写*/
+  flex-flow: row wrap;
+}
+.item{
+  background: lightblue;
+  width: 50px;
+  height: 50px;
+}
+.parent2{
+  display: flex;
+  /*子项对齐方式*/
+  justify-content: flex-start;
+  justify-content: flex-end;
+  justify-content: center;
+  justify-content: space-around;
+  justify-content: space-between;
+}
+.parent3{
+  display: flex;
+  /* 子项在侧轴对齐方式 */
+  align-items:flex-start;
+  /*align-items:flex-end;*/
+  /*align-items:center;*/
+  /*align-items:stretch;*/
+  /*align-items:baseline;*/
+  height: 150px;
+}
+.parent3 .item{
+  width: 50px;
+  height:auto;
+}
+.parent4{
+  display: flex;
+  flex-flow: row wrap;
+  height: 250px;
+  align-content: flex-end;
+  align-content: stretch;/*默认值*/
+  align-content: center;
+  align-content: flex-start;
+}
+.parent4 .item{
+  width: 200px;
+}
+.parent5{
+  display: flex;
+  font-weight: 900;
+}
+.parent5 .item{
+  font-size: 20px;
+  text-align: center;
+}
+.parent5 .item:nth-child(1){
+  order:2;
+}
+.parent5 .item:nth-child(2){
+  order:1;
+}
+
+.parent6{
+  display: flex;
+}
+.parent6 .item{
+  /*flex-grow: 0;*/
+  /*flex-grow: 1;*/
+  width: 200px;
+  flex-shrink: 0;
+  flex-shrink: 1;
+}
+
+.parent7{
+  display: flex;
+}
+.parent7 .item{
+  /* 子项目初始尺寸*/
+  flex-basis: 200px;
+  /*width: 200px;*/
+}
+
+.parent8{
+  display: flex;
+}
+.parent8 .item{
+  flex:1 1 200px;
+}
+.parent8 .item:nth-child(1){
+  flex: 10;
+}
+.parent8 .item:nth-child(2){
+  flex: 1;
+}
+.parent9{
+  display: flex;
+  align-content: flex-start;
+  justify-content: space-between;
+  height: 300px;
+}
+.parent9 .item:nth-of-type(2){
+  background: red;
+  /* 如果设置为auto则与父容器相容, 父容器没有的话,则为stretch*/
+  align-self: auto;
+  height: auto;
+}
+.parent10{
+  display: flex;
+}
+.parent10 .item:first-of-type{
+  /*margin: auto auto;*/
+  /*margin: 0 auto;*/
+  margin-right: auto;
+}
+
+.parent11{
+  display: flex;
+  height: 60px;
+  padding: 0;
+  margin: 0;
+  background: purple;
+  align-items: center;
+  border: 0;
+}
+.parent11 > span{
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  padding:0 20px;
+  margin-right: auto;
+}
+.parent11 .item{
+  color: #fff;
+  font-size: 16px;
+  background: transparent;
+  height: auto;
+  border: 0;
+}
+
+.parent12{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
